@@ -41,7 +41,8 @@ app.post("/scan", async (req, res) => {
         console.error("❌ Failed to send to frontend:", sendErr.message);
       }
 
-      return res.send({ summary });
+      return res.send({ success: true, summary });
+
     });
   } catch (err) {
     res.status(500).send({ error: err.message });
